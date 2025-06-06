@@ -1,0 +1,27 @@
+# requirements.txt
+websockets==11.0.3
+opencv-python==4.8.1.78
+tensorflow==2.13.0
+mediapipe==0.10.7
+Pillow==10.0.1
+numpy==1.24.3
+
+# Setup Instructions:
+
+# 1. Create a virtual environment
+python -m venv asl_env
+
+# 2. Activate virtual environment
+# On Windows:
+asl_env\Scripts\activate
+# On Mac/Linux:
+source asl_env/bin/activate
+
+# 3. Install requirements
+pip install -r requirements.txt
+
+# 4. Run the server
+python asl_server.py
+
+# The server will start on localhost:8000
+# You should see: "ASL Detection Server is running!"

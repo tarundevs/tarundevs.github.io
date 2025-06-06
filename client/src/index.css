@@ -1,0 +1,228 @@
+@import "tailwindcss";
+
+@theme {
+  --color-border: hsl(var(--border));
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+  --color-card: hsl(var(--card));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+  
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-pulse-subtle: pulse-subtle 4s ease-in-out infinite;
+  --animate-fade-in: fade-in 0.7s ease-out forwards;
+  --animate-fade-in-delay-1: fade-in 0.7s ease-out 0.2s forwards;
+  --animate-fade-in-delay-2: fade-in 0.7s ease-out 0.4s forwards;
+  --animate-fade-in-delay-3: fade-in 0.7s ease-out 0.6s forwards;
+  --animate-fade-in-delay-4: fade-in 0.7s ease-out 0.8s forwards;
+  --animate-meteor: meteor 4s linear infinite;
+  --animate-matrix-fall: matrix-fall linear infinite;
+
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+  @keyframes pulse-subtle {
+    0%, 100% {
+      opacity: 0.7;
+    }
+    50% {
+      opacity: 1;
+    }
+  }
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  @keyframes meteor {
+    0% {
+      transform: rotate(45deg) translateX(-200px);
+      opacity: 1;
+    }
+    100% {
+      transform: rotate(45deg) translateX(calc(100vw + 300px));
+      opacity: 0;
+    }
+  }
+
+  @keyframes matrix-fall {
+    0% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    80% {
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(calc(100vh + 50px));
+      opacity: 0;
+    }
+  }
+}
+
+@layer base {
+  :root {
+    --background: 0 0% 96%;
+    --foreground: 222 47% 11%;
+    --card: 0 0% 100%;
+    --primary: 250 47% 50%;
+    --primary-foreground: 210 40% 98%;
+    --border: 214 32% 91%;
+    --muted-foreground: 215 16% 47%;
+  }
+
+  .dark {
+    --background: 222 47% 4%;
+    --foreground: 213 31% 91%;
+    --card: 222 47% 8%;
+    --primary: 250 65% 65%;
+    --primary-foreground: 213 31% 91%;
+    --border: 217 33% 20%;
+    --muted-foreground: 215 20% 65%;
+  }
+  
+  * {
+    @apply border-border;
+  }
+
+  html {
+    @apply scroll-smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground transition-colors duration-300;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+@utility container {
+  margin-inline: auto;
+  padding-inline: 2rem;
+  @media (width >= 640px) {
+    max-width: 640px;
+  }
+  @media (width >= 768px) {
+    max-width: 768px;
+  }
+  @media (width >= 1024px) {
+    max-width: 1024px;
+  }
+  @media (width >= 1280px) {
+    max-width: 1280px;
+  }
+  @media (width >= 1400px) {
+    max-width: 1400px;
+  }
+}
+
+@utility text-glow {
+  @apply relative;
+  text-shadow: 0 0 10px rgba(167, 139, 250, 0.5);
+}
+
+@utility card-hover {
+  @apply transition-transform duration-300 hover:scale-[1.02] hover:shadow-lg;
+}
+
+@utility gradient-border {
+  @apply relative rounded-md;
+  background: linear-gradient(to right, hsl(var(--card)), hsl(var(--card)));
+  background-clip: padding-box;
+  border: 1px solid transparent;
+}
+
+@utility cosmic-button {
+  @apply px-6 rounded-full font-medium
+         transition-all duration-300 
+         hover:scale-105 active:scale-95
+         bg-gradient-to-r from-black to-red-600 text-white
+         dark:bg-primary dark:text-primary-foreground;
+  
+}
+
+@utility star {
+  @apply absolute rounded-full bg-white;
+  box-shadow: 0 0 10px 2px rgba(255, 255, 255, 0.4);
+}
+
+@utility meteor {
+  @apply absolute;
+  transform-origin: left center;
+}
+
+@utility matrix-char {
+  @apply absolute;
+  color: #065f46;
+  text-shadow: 0 0 5px rgba(6, 95, 70, 0.5);
+}
+
+
+@layer components {
+  .meteor::before {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 4px;
+    height: 4px;
+    background: radial-gradient(circle, #ff4757 0%, #ff3742 70%, #ff2732 100%);
+    border-radius: 50%;
+    box-shadow: 
+      0 0 8px 2px rgba(255, 71, 87, 0.9),
+      0 0 15px 4px rgba(255, 55, 66, 0.6),
+      0 0 25px 6px rgba(255, 39, 50, 0.3);
+  }
+
+  .meteor::after {
+    content: '';
+    position: absolute;
+    right: 4px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 1px;
+    background: linear-gradient(
+      to left,
+      rgba(255, 71, 87, 0.9) 0%,
+      rgba(255, 55, 66, 0.7) 25%,
+      rgba(255, 39, 50, 0.5) 50%,
+      rgba(255, 71, 87, 0.2) 75%,
+      transparent 100%
+    );
+    border-radius: 20px 0 0 20px;
+    box-shadow: 
+      0 0 6px rgba(255, 71, 87, 0.5),
+      0 0 12px rgba(255, 55, 66, 0.3);
+  }
+
+  /* Matrix character highlight effect */
+  .matrix-char:nth-child(5n) {
+    color: #10b981;
+    text-shadow: 0 0 8px rgba(16, 185, 129, 0.8);
+    font-weight: 900;
+  }
+
+  .matrix-char:nth-child(7n) {
+    color: #059669;
+    text-shadow: 0 0 6px rgba(5, 150, 105, 0.6);
+  }
+}
+
+#root {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0;
+  text-align: center;
+}
