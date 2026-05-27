@@ -19,4 +19,4 @@ A modern, responsive personal portfolio website built with React and Vite. This 
 - ESLint
 - Node.js
 
-To access the website, go to https://tarundevs.github.io/tarundevs.github.io/
+To access the website, go to https://tarundevs.github.io/
