@@ -88,7 +88,7 @@ export const NotFound = () => {
             <p className={`text-lg italic ${
               isDarkMode ? 'text-gray-300' : 'text-black bg-white/10'
             }`}>
-              "Empowering inclusive communication through technology"
+              "Building AI that solves real problems"
             </p>
           </div>
         </div>

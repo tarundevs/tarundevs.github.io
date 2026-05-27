@@ -3,7 +3,7 @@ import { cn } from "@/lib/utils";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
-const footerLinks = { product: [{ name: "ASL to Speech", href: "/asl_speech", isRoute: true }, { name: "Speech to ASL", href: "/speech_asl", isRoute: true }, { name: "Google Meet Integration", href: "/gmeet", isRoute: true }, { name: "Features", href: "/#about", isRoute: false }, { name: "Help Center", href: "/#help", isRoute: false }] };
+
 
 export const Footer = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -45,7 +45,7 @@ export const Footer = () => {
                   <span className={cn("ml-1 transition-colors duration-300", isDarkMode ? "text-foreground/80" : "text-white/90")}>Warrier</span>
                 </span>
               </Link>
-              {/* <p className={cn("text-sm leading-relaxed mb-6 max-w-md", isDarkMode ? "text-muted-foreground" : "text-white/70")}>Breaking communication barriers with innovative ASL and speech technology. Making conversations more accessible for everyone.</p> */}
+
             </div>
           </div>
 

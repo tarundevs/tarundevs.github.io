@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Github, ExternalLink, Award, Brain, Heart, Zap, Code, Database, Cpu, Briefcase, GraduationCap } from 'lucide-react';
+import { Github, ExternalLink, Award, Brain, Heart, Zap, Code, Database, Cpu, Briefcase, GraduationCap, Building2 } from 'lucide-react';
 
 export const Portfolio = () => {
   const [selectedType, setSelectedType] = useState('all');
@@ -29,151 +29,166 @@ export const Portfolio = () => {
   }, []);
 
   const projects = [
-    // Research Projects
+    // Experience
     {
       id: 1,
-      title: "NeuroValve Project",
-      type: "research",
-      description: "EdgeAI implementation for automated valvular heart disease diagnosis using multimodal data including PCG audio signals, ECG recordings, and medical imaging.",
-      technologies: ["Python", "NVIDIA Jetson", "Deep Learning", "Medical AI", "Edge Computing"],
-      status: "ongoing",
-      achievement: "Molbio Student Innovation Award",
-      icon: <Code className="w-6 h-6" />,
+      title: "Data Science Intern",
+      type: "experience",
+      description: "Built an AI assistant for medical reviewers handling drug safety case reports, reducing processing time from 20-30 minutes to under 1 minute. Designed a pipeline that calls multiple AI models with live database searches across Embase and openFDA.",
+      technologies: ["Python", "RAG", "LLMs", "Embase", "openFDA"],
+      status: "Present",
+      company: "Novartis Healthcare",
+      icon: <Briefcase className="w-6 h-6" />,
       metrics: {
-        accuracy: "N/A",
-        performance: "Real-time",
-        deployment: "Edge"
+        impact: "20x Speedup",
+        accuracy: "High",
+        role: "Internship"
       },
-      details: "Collaborating with hospital partners to benchmark performance and develop portable AI-powered health diagnostics solutions. This project is supported by the Molbio Student Innovation Award fellowship.",
-      projectType: "Research Project"
+      details: "Reduced incorrect AI outputs by grounding responses in retrieved source documents; improved retrieval quality and managed input size for accurate analysis of complex safety datasets.",
+      projectType: "Experience"
     },
-    
-    // Fellowship/Sponsorship Projects
     {
       id: 2,
-      title: "Valvular Heart Disease Detection",
-      type: "fellowship",
-      description: "AI-based VHD diagnosis utilizing PCG data on microcontroller with lightweight CNN achieving 95% accuracy.",
-      technologies: ["Python", "TensorFlow", "MFCC", "ADI MAX78000FTHR", "Embedded Systems"],
-      status: "completed",
-      github: "https://github.com/tarundevs/VHD",
-      icon: <Code className="w-6 h-6" />,
+      title: "Research Intern",
+      type: "experience",
+      description: "Applied a deep learning model for local image feature matching on Google Street View imagery for transportation research.",
+      technologies: ["Python", "Deep Learning", "Computer Vision", "Data Annotation"],
+      status: "Completed",
+      company: "CiSTUP, IISc Bangalore",
+      icon: <Brain className="w-6 h-6" />,
       metrics: {
-        accuracy: "95%",
-        platform: "Microcontroller",
-        signals: "PCG Audio"
+        dataset: "10,000+ Images",
+        application: "Traffic Re-ID",
+        role: "Internship"
       },
-      details: "Implemented lightweight CNN solution with MFCC signal processing for resource-constrained embedded systems. Funded through fellowship program.",
-      projectType: "Fellowship Project"
+      details: "Built India's largest annotated vehicle dataset for Indian traffic conditions, with over 10,000 labelled images for vehicle re-identification.",
+      projectType: "Experience"
     },
-    
-    // Internship Projects
     {
       id: 3,
-      title: "Power Grid Analysis System",
-      type: "internship",
-      description: "AI-based power grid analysis using hybrid CNN-LSTM neural networks achieving 94% classification accuracy.",
-      technologies: ["Python", "CNN-LSTM", "Dynamic Time Warping", "Pattern Recognition"],
-      status: "completed",
-      icon: <Code className="w-6 h-6" />,
+      title: "AI/ML Intern",
+      type: "experience",
+      description: "Built an anomaly detection system for power grid monitoring aimed at identifying the type of fault or anomaly present, achieving 94% classification accuracy.",
+      technologies: ["Python", "CNN-LSTM", "Time-series Clustering"],
+      status: "Completed",
+      company: "Southern Regional Load Dispatch Centre",
+      icon: <Zap className="w-6 h-6" />,
       metrics: {
         accuracy: "94%",
-        model: "CNN-LSTM",
-        application: "Grid Analysis"
+        model: "Hybrid CNN-LSTM",
+        role: "Internship"
       },
-      details: "Created unsupervised machine learning clustering algorithm for intelligent voltage pattern recognition during industry internship.",
-      projectType: "Internship Project"
+      details: "Improved detection coverage by combining supervised and unsupervised methods, including time-series clustering for voltage pattern recognition.",
+      projectType: "Experience"
     },
     
-    // Personal Projects
+    // Flagship Projects
     {
       id: 4,
-      title: "AI Knowledge Graph Intelligence",
-      type: "personal",
-      description: "Intelligent knowledge graph system using RGCN with BERT and CLIP embeddings for multimodal classification.",
-      technologies: ["Python", "RGCN", "BERT", "CLIP", "Graph Neural Networks"],
-      status: "completed",
-      github: "https://github.com/tarundevs/gnn",
-      icon: <Code className="w-6 h-6" />,
+      title: "NeuroValve",
+      type: "flagship",
+      description: "NeuroValve is a multimodal AI diagnostic system for valvular heart disease detection, using both PCG (Phonocardiogram) and ECG data, supported by Molbio Diagnostics. It was built on top of an earlier prototype developed during the Anveshan Fellowship, a competitive research fellowship by Analog Devices Inc. (ADI), where selected participants are provided with ADI hardware to build and deploy real-world solutions.",
+      technologies: ["Python", "EdgeAI", "Deep Learning", "Multimodal", "ADI MAX78000FTHR"],
+      status: "Ongoing",
+      achievement: "Molbio Student Innovation Award",
+      icon: <Heart className="w-6 h-6" />,
       metrics: {
-        accuracy: "79%",
-        type: "Multimodal",
-        optimization: "Cached"
+        accuracy: "AUC 0.80 (OOD)",
+        prototype: "95% (PCG)",
+        platform: "Edge/Microcontroller"
       },
-      details: "Built system with optimized caching for computational efficiency and multimodal data processing.",
-      projectType: "Personal Project"
+      details: "The prototype was deployed on the ADI MAX78000FTHR microcontroller (provided through the fellowship), using PCG data alone and achieving 95% accuracy. NeuroValve expanded on this by incorporating ECG data alongside PCG, achieving an AUC of 80% on out-of-domain external testing, showing real-world generalizability beyond the training distribution.",
+      projectType: "Flagship Project"
     },
     {
       id: 5,
-      title: "AI Research Assistant with RAG",
-      type: "personal",
-      description: "Intelligent research automation system using RAG, LangChain AI framework, and vector databases.",
-      technologies: ["Python", "RAG", "LangChain", "Vector Databases", "NLP"],
-      status: "completed",
-      github: "https://github.com/tarundevs/rag_based_ai_agent",
-      icon: <Code className="w-6 h-6" />,
+      title: "StackTox: Molecular Toxicity Prediction",
+      type: "flagship",
+      description: "Stacking model for molecular toxicity prediction, aimed at reducing the time and cost of lab-based screening in drug discovery and chemical safety.",
+      technologies: ["Python", "LightGBM", "Random Forest", "SVM", "Logistic Regression"],
+      status: "Completed",
+      icon: <Database className="w-6 h-6" />,
       metrics: {
-        automation: "Full",
-        citations: "Supported",
-        search: "Intelligent"
+        accuracy: "AUC 0.721 (OOD)",
+        features: "61 vs 944+",
+        dataset: "16,192 molecules"
       },
-      details: "Automates query generation, web searches, and insight extraction with citation-supported AI responses.",
-      projectType: "Personal Project"
+      details: "Achieved AUC 0.721 on an out of distribution assessment, outperforming MolToxPred, eToxPred, and ToxinPredictor using only 61 features compared to 944–2,237 in competing models.",
+      projectType: "Flagship Project"
     },
     {
       id: 6,
+      title: "Aneurysm Detection (3D Volumetric Imaging)",
+      type: "flagship",
+      description: "Intracranial aneurysm detection system using high and low-resolution MR and CT scans of the Circle of Willis.",
+      technologies: ["Python", "3D CNN", "Medical Imaging", "MR/CT"],
+      status: "Completed",
+      icon: <Brain className="w-6 h-6" />,
+      metrics: {
+        accuracy: "AUC 0.80",
+        approach: "Two-stage",
+        type: "3D Volumetric"
+      },
+      details: "Used a two-stage approach: region-of-interest selection followed by a 3D CNN for classification.",
+      projectType: "Flagship Project"
+    },
+    {
+      id: 7,
+      title: "AI Knowledge Graph Intelligence",
+      type: "flagship",
+      description: "Knowledge graph system using a graph neural network with text and image embeddings for multi-category classification.",
+      technologies: ["Python", "RGCN", "BERT", "CLIP", "Graph Neural Networks"],
+      status: "Completed",
+      github: "https://github.com/tarundevs/Mutlimodal-RGCN",
+      icon: <Database className="w-6 h-6" />,
+      metrics: {
+        accuracy: "79%",
+        type: "Multimodal",
+        embeddings: "BERT + CLIP"
+      },
+      details: "Built system with optimized caching for computational efficiency and multimodal data processing.",
+      projectType: "Flagship Project"
+    },
+    {
+      id: 8,
       title: "Reinforcement Learning Game AI",
-      type: "personal",
-      description: "Advanced RL agent using Double Q-Learning for strategic decision-making with 88% win rate.",
+      type: "flagship",
+      description: "Self-learning game agent using Double Q-Learning that achieved an 88% win rate through trial-and-error training.",
       technologies: ["Python", "Reinforcement Learning", "Double Q-Learning", "Game AI"],
-      status: "completed",
-      github: "https://github.com/tarundevs/Deep-Reinforcement-Learning",
-      icon: <Code className="w-6 h-6" />,
+      status: "Completed",
+      github: "https://github.com/tarundevs/DRL-TicTacToe",
+      icon: <Cpu className="w-6 h-6" />,
       metrics: {
         winRate: "88%",
         learning: "Autonomous",
-        optimization: "Policy"
+        algorithm: "Double Q-Learning"
       },
       details: "AI agent achieved high performance through autonomous learning and policy optimization techniques.",
-      projectType: "Personal Project"
+      projectType: "Flagship Project"
     }
   ];
 
   const projectTypes = [
     { 
       id: 'all', 
-      name: 'All Projects', 
+      name: 'All', 
       count: projects.length, 
       icon: <Code className="w-4 h-4" />,
-      description: 'All projects across categories'
+      description: 'All roles and projects'
     },
     { 
-      id: 'research', 
-      name: 'Research', 
-      count: projects.filter(p => p.type === 'research').length,
-      icon: <Brain className="w-4 h-4" />,
-      description: 'Research and academic projects'
-    },
-    { 
-      id: 'fellowship', 
-      name: 'Fellowship', 
-      count: projects.filter(p => p.type === 'fellowship').length,
-      icon: <Award className="w-4 h-4" />,
-      description: 'Fellowship and sponsored projects'
-    },
-    { 
-      id: 'internship', 
-      name: 'Internship', 
-      count: projects.filter(p => p.type === 'internship').length,
+      id: 'experience', 
+      name: 'Experience', 
+      count: projects.filter(p => p.type === 'experience').length,
       icon: <Briefcase className="w-4 h-4" />,
-      description: 'Industry internship projects'
+      description: 'Professional experience and internships'
     },
     { 
-      id: 'personal', 
-      name: 'Personal', 
-      count: projects.filter(p => p.type === 'personal').length,
-      icon: <Code className="w-4 h-4" />,
-      description: 'Personal development projects'
+      id: 'flagship', 
+      name: 'Flagship Projects', 
+      count: projects.filter(p => p.type === 'flagship').length,
+      icon: <Award className="w-4 h-4" />,
+      description: 'Major projects and research'
     }
   ];
 
@@ -183,16 +198,18 @@ export const Portfolio = () => {
 
   const getStatusColor = (status) => {
     switch (status) {
-      case 'ongoing': return isDarkMode ? 'text-blue-400' : 'text-blue-600';
-      case 'completed': return isDarkMode ? 'text-green-400' : 'text-green-600';
+      case 'Ongoing': 
+      case 'Present': return isDarkMode ? 'text-blue-400' : 'text-blue-600';
+      case 'Completed': return isDarkMode ? 'text-green-400' : 'text-green-600';
       default: return isDarkMode ? 'text-gray-400' : 'text-gray-600';
     }
   };
 
   const getStatusBg = (status) => {
     switch (status) {
-      case 'ongoing': return isDarkMode ? 'bg-blue-400/10' : 'bg-blue-100';
-      case 'completed': return isDarkMode ? 'bg-green-400/10' : 'bg-green-100';
+      case 'Ongoing': 
+      case 'Present': return isDarkMode ? 'bg-blue-400/10' : 'bg-blue-100';
+      case 'Completed': return isDarkMode ? 'bg-green-400/10' : 'bg-green-100';
       default: return isDarkMode ? 'bg-gray-400/10' : 'bg-gray-100';
     }
   };
@@ -200,14 +217,10 @@ export const Portfolio = () => {
   const getProjectTypeBadge = (type) => {
     const baseClasses = "px-2 py-1 text-xs rounded-full font-medium";
     switch (type) {
-      case 'research':
+      case 'experience':
         return `${baseClasses} ${isDarkMode ? 'bg-purple-400/10 text-purple-400' : 'bg-purple-100 text-purple-700'}`;
-      case 'fellowship':
+      case 'flagship':
         return `${baseClasses} ${isDarkMode ? 'bg-yellow-400/10 text-yellow-400' : 'bg-yellow-100 text-yellow-700'}`;
-      case 'internship':
-        return `${baseClasses} ${isDarkMode ? 'bg-green-400/10 text-green-400' : 'bg-green-100 text-green-700'}`;
-      case 'personal':
-        return `${baseClasses} ${isDarkMode ? 'bg-blue-400/10 text-blue-400' : 'bg-blue-100 text-blue-700'}`;
       default:
         return `${baseClasses} ${isDarkMode ? 'bg-gray-400/10 text-gray-400' : 'bg-gray-100 text-gray-700'}`;
     }
@@ -215,22 +228,14 @@ export const Portfolio = () => {
 
   const getTypeButtonColor = (type) => {
     switch (type) {
-      case 'research':
+      case 'experience':
         return selectedType === type
           ? (isDarkMode ? 'border-purple-400 bg-purple-400/10 text-purple-400' : 'border-purple-600 bg-purple-600/10 text-purple-600')
           : (isDarkMode ? 'border-border text-muted-foreground hover:border-purple-400/50 hover:text-foreground' : 'border-gray-300 text-gray-600 hover:border-purple-600/50 hover:text-black bg-white/10 backdrop-blur-sm');
-      case 'fellowship':
+      case 'flagship':
         return selectedType === type
           ? (isDarkMode ? 'border-yellow-400 bg-yellow-400/10 text-yellow-400' : 'border-yellow-600 bg-yellow-600/10 text-yellow-600')
           : (isDarkMode ? 'border-border text-muted-foreground hover:border-yellow-400/50 hover:text-foreground' : 'border-gray-300 text-gray-600 hover:border-yellow-600/50 hover:text-black bg-white/10 backdrop-blur-sm');
-      case 'internship':
-        return selectedType === type
-          ? (isDarkMode ? 'border-green-400 bg-green-400/10 text-green-400' : 'border-green-600 bg-green-600/10 text-green-600')
-          : (isDarkMode ? 'border-border text-muted-foreground hover:border-green-400/50 hover:text-foreground' : 'border-gray-300 text-gray-600 hover:border-green-600/50 hover:text-black bg-white/10 backdrop-blur-sm');
-      case 'personal':
-        return selectedType === type
-          ? (isDarkMode ? 'border-blue-400 bg-blue-400/10 text-blue-400' : 'border-blue-600 bg-blue-600/10 text-blue-600')
-          : (isDarkMode ? 'border-border text-muted-foreground hover:border-blue-400/50 hover:text-foreground' : 'border-gray-300 text-gray-600 hover:border-blue-600/50 hover:text-black bg-white/10 backdrop-blur-sm');
       default:
         return selectedType === type
           ? (isDarkMode ? 'border-primary bg-primary/10 text-primary' : 'border-red-600 bg-red-600/10 text-red-600')
@@ -248,7 +253,7 @@ export const Portfolio = () => {
             isDarkMode 
               ? 'text-primary' 
               : 'bg-gradient-to-r from-black to-red-600 bg-clip-text text-transparent'
-          }>Portfolio</span>
+          }>Experience & Projects</span>
         </h2>
 
         {/* Project Type Filter */}
@@ -281,10 +286,8 @@ export const Portfolio = () => {
               {/* Project Header */}
               <div className="flex items-start justify-between mb-4">
                 <div className={`p-3 rounded-lg ${
-                  project.type === 'research' ? (isDarkMode ? 'bg-purple-400/10 text-purple-400' : 'bg-purple-100 text-purple-600') :
-                  project.type === 'fellowship' ? (isDarkMode ? 'bg-yellow-400/10 text-yellow-400' : 'bg-yellow-100 text-yellow-600') :
-                  project.type === 'internship' ? (isDarkMode ? 'bg-green-400/10 text-green-400' : 'bg-green-100 text-green-600') :
-                  project.type === 'personal' ? (isDarkMode ? 'bg-blue-400/10 text-blue-400' : 'bg-blue-100 text-blue-600') :
+                  project.type === 'experience' ? (isDarkMode ? 'bg-purple-400/10 text-purple-400' : 'bg-purple-100 text-purple-600') :
+                  project.type === 'flagship' ? (isDarkMode ? 'bg-yellow-400/10 text-yellow-400' : 'bg-yellow-100 text-yellow-600') :
                   (isDarkMode ? 'bg-primary/10 text-primary' : 'bg-red-100 text-red-600')
                 }`}>
                   {project.icon}
@@ -294,7 +297,7 @@ export const Portfolio = () => {
                     {project.status}
                   </span>
                   {project.achievement && (
-                    <Award className={`w-4 h-4 ${isDarkMode ? 'text-yellow-400' : 'text-yellow-600'}`} />
+                    <Award className={`w-4 h-4 ${isDarkMode ? 'text-yellow-400' : 'text-yellow-600'}`} title={project.achievement} />
                   )}
                 </div>
               </div>
@@ -307,11 +310,20 @@ export const Portfolio = () => {
               </div>
 
               {/* Project Title */}
-              <h3 className={`text-xl font-semibold mb-3 ${
+              <h3 className={`text-xl font-semibold mb-1 ${
                 isDarkMode ? 'text-foreground' : 'text-black'
               }`}>
                 {project.title}
               </h3>
+              
+              {project.company && (
+                <div className={`text-sm font-medium mb-3 flex items-center gap-1 ${
+                  isDarkMode ? 'text-primary' : 'text-red-600'
+                }`}>
+                  <Building2 className="w-3 h-3" />
+                  {project.company}
+                </div>
+              )}
 
               {/* Project Description */}
               <p className={`text-sm mb-4 line-clamp-3 ${
@@ -326,7 +338,7 @@ export const Portfolio = () => {
                   <div key={key} className={`text-xs ${
                     isDarkMode ? 'text-muted-foreground' : 'text-gray-600'
                   }`}>
-                    <span className="capitalize font-medium">{key}:</span> {value}
+                    <span className="capitalize font-medium">{key.replace('_', ' ')}:</span> {value}
                   </div>
                 ))}
               </div>
@@ -374,14 +386,10 @@ export const Portfolio = () => {
                 )}
                 <button
                   className={`flex items-center gap-1 px-3 py-1 text-xs rounded border transition-colors ${
-                    project.type === 'research' ? 
+                    project.type === 'experience' ? 
                       (isDarkMode ? 'border-purple-400 text-purple-400 hover:bg-purple-400/10' : 'border-purple-600 text-purple-600 hover:bg-purple-600/10') :
-                    project.type === 'fellowship' ? 
+                    project.type === 'flagship' ? 
                       (isDarkMode ? 'border-yellow-400 text-yellow-400 hover:bg-yellow-400/10' : 'border-yellow-600 text-yellow-600 hover:bg-yellow-600/10') :
-                    project.type === 'internship' ? 
-                      (isDarkMode ? 'border-green-400 text-green-400 hover:bg-green-400/10' : 'border-green-600 text-green-600 hover:bg-green-600/10') :
-                    project.type === 'personal' ? 
-                      (isDarkMode ? 'border-blue-400 text-blue-400 hover:bg-blue-400/10' : 'border-blue-600 text-blue-600 hover:bg-blue-600/10') :
                       (isDarkMode ? 'border-primary text-primary hover:bg-primary/10' : 'border-red-600 text-red-600 hover:bg-red-600/10')
                   }`}
                 >
@@ -409,11 +417,19 @@ export const Portfolio = () => {
                       {selectedProject.projectType}
                     </span>
                   </div>
-                  <h3 className={`text-2xl font-bold mb-2 ${
+                  <h3 className={`text-2xl font-bold mb-1 ${
                     isDarkMode ? 'text-foreground' : 'text-black'
                   }`}>
                     {selectedProject.title}
                   </h3>
+                  {selectedProject.company && (
+                    <div className={`font-medium mb-2 flex items-center gap-1 ${
+                      isDarkMode ? 'text-primary' : 'text-red-600'
+                    }`}>
+                      <Building2 className="w-4 h-4" />
+                      {selectedProject.company}
+                    </div>
+                  )}
                   {selectedProject.achievement && (
                     <div className={`text-sm font-medium ${
                       isDarkMode ? 'text-yellow-400' : 'text-yellow-600'
@@ -452,7 +468,7 @@ export const Portfolio = () => {
                     <div className={`text-xs ${
                       isDarkMode ? 'text-muted-foreground' : 'text-gray-600'
                     }`}>
-                      {key.charAt(0).toUpperCase() + key.slice(1)}
+                      {key.replace('_', ' ').charAt(0).toUpperCase() + key.replace('_', ' ').slice(1)}
                     </div>
                     <div className={`font-semibold ${
                       isDarkMode ? 'text-foreground' : 'text-black'
@@ -474,14 +490,10 @@ export const Portfolio = () => {
                     <span
                       key={tech}
                       className={`px-3 py-1 text-sm rounded ${
-                        selectedProject.type === 'research' ? 
+                        selectedProject.type === 'experience' ? 
                           (isDarkMode ? 'bg-purple-400/10 text-purple-400' : 'bg-purple-100 text-purple-700') :
-                        selectedProject.type === 'fellowship' ? 
+                        selectedProject.type === 'flagship' ? 
                           (isDarkMode ? 'bg-yellow-400/10 text-yellow-400' : 'bg-yellow-100 text-yellow-700') :
-                        selectedProject.type === 'internship' ? 
-                          (isDarkMode ? 'bg-green-400/10 text-green-400' : 'bg-green-100 text-green-700') :
-                        selectedProject.type === 'personal' ? 
-                          (isDarkMode ? 'bg-blue-400/10 text-blue-400' : 'bg-blue-100 text-blue-700') :
                           (isDarkMode ? 'bg-primary/10 text-primary' : 'bg-red-100 text-red-700')
                       }`}
                     >
@@ -498,14 +510,10 @@ export const Portfolio = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                     className={`flex items-center gap-2 px-6 py-2 rounded-lg border transition-colors ${
-                      selectedProject.type === 'research' ? 
+                      selectedProject.type === 'experience' ? 
                         (isDarkMode ? 'border-purple-400 text-purple-400 hover:bg-purple-400/10' : 'border-purple-600 text-purple-600 hover:bg-purple-600/10') :
-                      selectedProject.type === 'fellowship' ? 
+                      selectedProject.type === 'flagship' ? 
                         (isDarkMode ? 'border-yellow-400 text-yellow-400 hover:bg-yellow-400/10' : 'border-yellow-600 text-yellow-600 hover:bg-yellow-600/10') :
-                      selectedProject.type === 'internship' ? 
-                        (isDarkMode ? 'border-green-400 text-green-400 hover:bg-green-400/10' : 'border-green-600 text-green-600 hover:bg-green-600/10') :
-                      selectedProject.type === 'personal' ? 
-                        (isDarkMode ? 'border-blue-400 text-blue-400 hover:bg-blue-400/10' : 'border-blue-600 text-blue-600 hover:bg-blue-600/10') :
                         (isDarkMode ? 'border-primary text-primary hover:bg-primary/10' : 'border-red-600 text-red-600 hover:bg-red-600/10')
                     }`}
                   >

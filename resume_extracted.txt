@@ -1,0 +1,62 @@
+T arun W arrier
+Bangalore, India · tarunwarrier1@gmail.com · +91 70227 36732 · tarundevs.github.io
+Educa tion
+BITS Pilani, K.K. Birla Goa Campus Oct 2022 – May 2026
+B.E. (Hons.) Electronics & Communication Engineering Goa, India
+Skills
+F rameworks PyTorch, TensorFlow, OpenCV,scikit-image, Scikit-learn, LightGBM,LangChain, HuggingFaceTrans-
+formers, NumPy, Pandas, RDKit, Matplotlib
+Computer Vision CNN, Transformers (ViT), image segmentation, classification, feature extraction, data annotation,
+weak supervision
+3D / V olumetric 3D CNNs, volumetric image handling, ROI selection, MR/MRI and CT scan processing
+Multimodal Multimodal fusion (audio + ECG + imaging), modalities: MR/MRI, CT, ECG, PCG
+Deep Learning LSTM, MFCC signal processing, local-feature Transformer matching, RGCN
+ML Methods RAG, Stacking Ensembles, BERT/CLIP Embeddings, Reinforcement Learning (Double Q-Learning),
+KNN Imputation, molecular descriptors
+AI Applications NLP, Edge AI, Medical Diagnostics, Pharmacovigilance, Drug Discovery
+Edge & Hard-
+ware
+ADI MAX78000FTHR microcontroller, EdgeAI deployment
+Languages Python (primary), Java, C/C++, MATLAB, JavaScript
+Work Experience
+Data Science Intern Jan 2026 – Present
+Novartis Healthcare Hyderabad, India
+• Built an AI assistant for medical reviewers handling drug safety case reports, aimed at removing inconsistency and improving review
+speed, reducing processing time from 20–30 minutes to under 1 minute (20x reduction).
+• Designed a pipeline that calls multiple AI models with live database searches across Embase and openFDA to retrieve drug safety
+information, supporting human-reviewed automated assessments of clinical case records.
+• Reduced incorrect AI outputs by grounding responses in retrieved source documents; improved retrieval quality and managed input size
+for accurate analysis of complex safety datasets.
+Research Intern Jun 2025 – Jul 2025
+CiSTUP, IISc Bangalore Bangalore, India
+• Built India’s largest annotated vehicle dataset for Indian traffic conditions, with over 10,000 labelled images for vehicle re-identification.
+• Applied a deep learning model for local image feature matching on Google Street View imagery for transportation research.
+AI/ML Intern May 2024 – Jul 2024
+Southern Regional Load Dispatch Centre Bangalore, India
+• Built an anomaly detection system for power grid monitoring aimed at identifying the type of fault or anomaly present, achieving 94%
+classification accuracy using a hybrid CNN-LSTM model.
+• Improved detection coverage by combining supervised and unsupervised methods, including time-series clustering for voltage pattern
+recognition.
+Projects & Research
+NeuroV alve– Molbio Student Innovation Award Apr 2025 – Present
+• Built NeuroValve, a heart disease detection system aimed at early detection of valvular heart disease using Phonocardiograms (PCG)
+and Echocardiograms together, achieving AUC 0.85 on external PCG validation and AUC 0.80 on external ECG validation.
+• Expanded from a single-modality prototype built during the Anveshan Fellowship (deployed on ADI MAX78000FTHR microcontroller,
+95% internal accuracy on PCG) to a full multimodal system.
+StackT ox: Molecular T oxicity Prediction Manuscript in preparation
+• Achieved AUC 0.721 on an independent external test set, outperforming MolToxPred, eToxPred, and ToxinPredictor using only 61
+features compared to 944–2,237 in competing models.
+• Built StackTox for molecular toxicity prediction, aimed at reducing the time and cost of lab-based screening in drug discovery and chemical
+safety.
+• Trained a stacking model (Random Forest + LightGBM + SVM + logistic regression) on a dataset of 16,192 molecules.
+Aneurysm Detection (3D V olumetric Imaging)
+• Built an intracranial aneurysm detection system aimed at identifying the type of aneurysm present using high and low-resolution MR
+and CT scans of the Circle of Willis, achieving internal AUC of 0.80.
+• Used a two-stage approach: region-of-interest selection followed by a 3D CNN for classification.
+AI Knowledge Graph Intelligence github.com/tarundevs/Mutlimodal-RGCN
+• Built a knowledge graph system using a graph neural network with text and image embeddings for multi-category classification, achieving
+79% validation accuracy.
+Reinforcement Learning Game AI github.com/tarundevs/DRL-TicTacToe
+• Built a self-learning game agent using Double Q-Learning that achieved an 88% win rate through trial-and-error training.
+A w ards & Recognition
+Molbio Student Innovation A ward Sponsored by Molbio Diagnostics for AI research in medical diagnostics Apr 2025
